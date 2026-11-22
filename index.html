@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>我的课表</title>
+<meta name="theme-color" content="#f4f1ea">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="课表">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <p class="term" id="term"></p>
+    <div class="weekrow">
+      <button class="nav-btn" id="prev" aria-label="上一周">‹</button>
+      <div class="weekbox" id="weekbox">
+        <div class="weekno"><span id="weeknum">第 12 周</span><span class="badge" id="thisweek" hidden>本周</span></div>
+        <div class="daterange" id="daterange">11/16 – 11/22</div>
+      </div>
+      <button class="nav-btn" id="next" aria-label="下一周">›</button>
+    </div>
+    <div class="progress"><div class="progress-bar" id="progressbar"></div></div>
+  </header>
+
+  <div class="board" id="board">
+    <div class="corner"></div>
+    <div class="dayhead" data-day="1"><b>一</b><span></span></div>
+    <div class="dayhead" data-day="2"><b>二</b><span></span></div>
+    <div class="dayhead" data-day="3"><b>三</b><span></span></div>
+    <div class="dayhead" data-day="4"><b>四</b><span></span></div>
+    <div class="dayhead" data-day="5"><b>五</b><span></span></div>
+    <div class="dayhead" data-day="6"><b>六</b><span></span></div>
+    <div class="dayhead" data-day="7"><b>日</b><span></span></div>
+
+    <div class="timecol" id="timecol"></div>
+    <div class="daycol" data-day="1"></div>
+    <div class="daycol" data-day="2"></div>
+    <div class="daycol" data-day="3"></div>
+    <div class="daycol" data-day="4"></div>
+    <div class="daycol" data-day="5"></div>
+    <div class="daycol" data-day="6"></div>
+    <div class="daycol" data-day="7"></div>
+  </div>
+
+  <div class="hint" id="hint">← 左右滑动切换周 →</div>
+</div>
+
+<button class="fab" id="backtoday" hidden>回到本周</button>
+
+<div class="sheet-mask" id="mask" hidden></div>
+<div class="sheet" id="sheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-body" id="sheetbody"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
